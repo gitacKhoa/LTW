@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bảng điểm chi tiết — EduResult</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="app-sidebar"></div>
+
+  <div class="main">
+    <header class="topbar" id="app-topbar"></header>
+
+    <main class="content">
+      <div class="content__header">
+        <div>
+          <h1 class="content__title">Bảng điểm chi tiết</h1>
+          <p class="content__subtitle" id="pageSubtitle">Đang tải...</p>
+        </div>
+        <button class="btn btn-secondary" id="printBtn">In bảng điểm</button>
+      </div>
+
+      <section class="card">
+        <div class="flex items-center gap-16" style="flex-wrap:wrap;">
+          <div id="studentAvatarWrap"></div>
+          <div style="flex:1;min-width:200px;">
+            <div class="font-bold" style="font-size:var(--fs-lg);" id="studentNameText">—</div>
+            <div class="text-sm text-muted" id="studentMetaText">—</div>
+          </div>
+          <div class="grid grid-3" style="flex:1.4;min-width:280px;">
+            <div class="metric-tile">
+              <div class="metric-tile__icon" id="iconSubj" style="background:var(--blue-100);color:var(--blue);"></div>
+              <div><div class="metric-tile__value" id="mtSubjects">–</div><div class="metric-tile__label">Số môn</div></div>
+            </div>
+            <div class="metric-tile">
+              <div class="metric-tile__icon" id="iconGpa2" style="background:var(--warn-100);color:var(--warn);"></div>
+              <div><div class="metric-tile__value" id="mtGpa">–</div><div class="metric-tile__label">GPA</div></div>
+            </div>
+            <div class="metric-tile">
+              <div class="metric-tile__icon" id="iconRank2" style="background:var(--success-100);color:var(--success);"></div>
+              <div><div class="metric-tile__value" id="mtRank">–</div><div class="metric-tile__label">Xếp loại</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card mt-24">
+        <div class="card__title" style="margin-bottom:14px;">Chi tiết theo môn học</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>STT</th><th>Môn học</th><th>Tín chỉ</th><th>Điểm quá trình</th><th>Điểm thi</th><th>Tổng kết</th><th>Đánh giá</th></tr></thead>
+            <tbody id="transcriptBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="../assets/js/core/icons.js"></script>
+<script src="../assets/js/core/mockData.js"></script>
+<script src="../assets/js/core/api.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/ui.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/pages/transcript.js"></script>
+</body>
+</html>

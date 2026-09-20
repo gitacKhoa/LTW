@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tổng quan — EduResult</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="app-sidebar"></div>
+
+  <div class="main">
+    <header class="topbar" id="app-topbar"></header>
+
+    <main class="content">
+      <section class="card" style="background:linear-gradient(120deg, var(--primary-100), var(--blue-100));border:none;">
+        <div class="flex items-center justify-between gap-16" style="flex-wrap:wrap;">
+          <div>
+            <h1 style="font-size:var(--fs-xl);font-weight:800;" id="greetingText">Xin chào! 👋</h1>
+            <p class="text-sm text-muted mt-8" id="studentIdText">—</p>
+            <p class="text-sm mt-16" style="max-width:420px;font-style:italic;">“Mỗi điểm số là một bước tiến trên hành trình chinh phục ước mơ.”</p>
+          </div>
+          <svg viewBox="0 0 160 140" width="140" height="120" style="flex-shrink:0;">
+            <circle cx="80" cy="70" r="58" fill="#ffffff55"/>
+            <path d="M80 34 40 58l40 24 40-24-40-24Z" fill="#6C5DD3"/>
+            <path d="M55 68v20c0 8 12 14 25 14s25-6 25-14V68l-25 15-25-15Z" fill="#4F7CFF"/>
+            <circle cx="123" cy="60" r="5" fill="#F5B400"/>
+          </svg>
+        </div>
+      </section>
+
+      <div class="content__header" style="margin-top:22px;">
+        <h2 class="content__title" style="font-size:var(--fs-lg);">Tổng quan kết quả học tập</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="metric-tile">
+          <div class="metric-tile__icon" id="iconSubjects" style="background:var(--blue-100);color:var(--blue);"></div>
+          <div><div class="metric-tile__value" id="mTotalSubjects">–</div><div class="metric-tile__label">Tổng số môn đã học</div></div>
+        </div>
+        <div class="metric-tile">
+          <div class="metric-tile__icon" id="iconGpa" style="background:var(--warn-100);color:var(--warn);"></div>
+          <div><div class="metric-tile__value" id="mGpa">–</div><div class="metric-tile__label">Điểm trung bình chung</div></div>
+        </div>
+        <div class="metric-tile">
+          <div class="metric-tile__icon" id="iconRank" style="background:var(--success-100);color:var(--success);"></div>
+          <div><div class="metric-tile__value" id="mRank">–</div><div class="metric-tile__label">Xếp loại học lực</div></div>
+        </div>
+      </div>
+
+      <section class="card mt-24">
+        <div class="card__head">
+          <div class="card__title">Bảng điểm của tôi</div>
+          <a class="card__link" href="transcript.html">Xem chi tiết →</a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>STT</th><th>Môn học</th><th>Điểm quá trình</th><th>Điểm thi</th><th>Tổng kết</th><th>Đánh giá</th></tr></thead>
+            <tbody id="myGradesBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="../assets/js/core/icons.js"></script>
+<script src="../assets/js/core/mockData.js"></script>
+<script src="../assets/js/core/api.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/ui.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/pages/studentDashboard.js"></script>
+</body>
+</html>

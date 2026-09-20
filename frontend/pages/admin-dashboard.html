@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tổng quan — EduResult</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="app-sidebar"></div>
+
+  <div class="main">
+    <header class="topbar" id="app-topbar"></header>
+
+    <main class="content">
+      <div class="content__header">
+        <div>
+          <h1 class="content__title">Tổng quan</h1>
+          <p class="content__subtitle">Theo dõi tình hình điểm số và sinh viên toàn hệ thống.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-12">
+        <!-- Pass/fail donut -->
+        <section class="card col-8">
+          <div class="card__head">
+            <div class="card__title">Thống kê tỷ lệ Đậu / Rớt</div>
+            <div class="stat-card__icon" id="trophyIconWrap" style="background:var(--warn-100);color:var(--warn);"></div>
+          </div>
+          <div class="flex items-center gap-16" style="flex-wrap:wrap;">
+            <div class="donut" id="passFailDonut">
+              <div class="donut__hole">
+                <div class="donut__pct" id="donutPct">–</div>
+                <div class="donut__pct-label">Đậu</div>
+              </div>
+            </div>
+            <div class="legend" id="passFailLegend" style="flex:1;min-width:180px;"></div>
+          </div>
+        </section>
+
+        <!-- Stat cards -->
+        <div class="col-4" style="display:flex;flex-direction:column;gap:18px;">
+          <div class="stat-card stat-card--blue">
+            <div class="stat-card__top">
+              <span class="stat-card__label">Tổng số sinh viên</span>
+              <span class="stat-card__icon" id="iconUsers"></span>
+            </div>
+            <div class="stat-card__value" id="statTotalStudents">–</div>
+            <span class="stat-card__delta" id="statTotalDelta"></span>
+          </div>
+          <div class="stat-card stat-card--purple">
+            <div class="stat-card__top">
+              <span class="stat-card__label">Điểm trung bình cao nhất</span>
+              <span class="stat-card__icon" id="iconStar"></span>
+            </div>
+            <div class="stat-card__value" id="statHighest">–</div>
+            <span class="stat-card__delta" id="statHighestSub"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-12 mt-24">
+        <!-- Upload -->
+        <section class="card col-8">
+          <div class="card__head">
+            <div>
+              <div class="card__title">Nhập điểm từ file Excel hoặc nhập tay</div>
+              <div class="text-xs text-muted mt-8">Kéo thả file Excel vào đây, hoặc sang trang Nhập điểm để nhập từng dòng.</div>
+            </div>
+          </div>
+          <div class="dropzone" id="dashDropzone">
+            <div class="dropzone__icon" id="dropzoneIcon"></div>
+            <div class="dropzone__title">Kéo thả file Excel vào đây</div>
+            <div class="dropzone__hint">Hỗ trợ định dạng .xlsx, .xls (tối đa 10MB)</div>
+            <input type="file" id="dashFileInput" accept=".xlsx,.xls">
+            <button type="button" class="btn btn-primary" id="dashChooseFile">Chọn file</button>
+          </div>
+          <a class="btn btn-ghost mt-16" href="grade-entry.html" style="width:fit-content;">Đi tới trang Nhập điểm đầy đủ →</a>
+        </section>
+
+        <!-- Leaderboard preview -->
+        <section class="card col-4">
+          <div class="card__head">
+            <div class="card__title">Bảng vàng</div>
+            <span class="card__link text-muted">Xem tất cả →</span>
+          </div>
+          <div id="leaderboardPreview" style="display:flex;flex-direction:column;gap:12px;"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="../assets/js/core/icons.js"></script>
+<script src="../assets/js/core/mockData.js"></script>
+<script src="../assets/js/core/api.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/ui.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/pages/adminDashboard.js"></script>
+</body>
+</html>

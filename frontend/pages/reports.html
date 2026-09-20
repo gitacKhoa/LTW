@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo cáo thống kê — EduResult</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="app-sidebar"></div>
+
+  <div class="main">
+    <header class="topbar" id="app-topbar"></header>
+
+    <main class="content">
+      <div class="content__header">
+        <div>
+          <h1 class="content__title">Báo cáo thống kê</h1>
+          <p class="content__subtitle">Tỷ lệ Đậu / Rớt toàn trường và theo từng lớp.</p>
+        </div>
+        <div class="flex gap-12">
+          <button class="btn btn-secondary" data-export="excel">Xuất Excel</button>
+          <button class="btn btn-primary" data-export="pdf">Xuất PDF</button>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="metric-tile">
+          <div class="metric-tile__icon" id="miIconStudents" style="background:var(--blue-100);color:var(--blue);"></div>
+          <div><div class="metric-tile__value" id="miTotal">–</div><div class="metric-tile__label">Tổng số sinh viên</div></div>
+        </div>
+        <div class="metric-tile">
+          <div class="metric-tile__icon" id="miIconPass" style="background:var(--success-100);color:var(--success);"></div>
+          <div><div class="metric-tile__value" id="miPassRate">–</div><div class="metric-tile__label">Tỷ lệ đậu chung</div></div>
+        </div>
+        <div class="metric-tile">
+          <div class="metric-tile__icon" id="miIconAvg" style="background:var(--primary-100);color:var(--primary);"></div>
+          <div><div class="metric-tile__value" id="miAvg">–</div><div class="metric-tile__label">Điểm trung bình toàn trường</div></div>
+        </div>
+      </div>
+
+      <div class="grid grid-12 mt-24">
+        <section class="card col-4">
+          <div class="card__title" style="margin-bottom:16px;">Tổng quan Đậu / Rớt</div>
+          <div class="flex items-center gap-16" style="flex-direction:column;">
+            <div class="donut" id="reportDonut">
+              <div class="donut__hole"><div class="donut__pct" id="reportDonutPct">–</div><div class="donut__pct-label">Đậu</div></div>
+            </div>
+            <div class="legend" id="reportLegend" style="width:100%;"></div>
+          </div>
+        </section>
+
+        <section class="card col-8">
+          <div class="card__title" style="margin-bottom:16px;">Tỷ lệ đậu theo lớp</div>
+          <div id="classBreakdown" style="display:flex;flex-direction:column;gap:14px;"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="../assets/js/core/icons.js"></script>
+<script src="../assets/js/core/mockData.js"></script>
+<script src="../assets/js/core/api.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/ui.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/pages/reports.js"></script>
+</body>
+</html>

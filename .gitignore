@@ -1,0 +1,14 @@
+node_modules/
+backend/node_modules/
+.env
+.env.local
+backend/uploads/
+*.xlsx
+*.csv
+.DS_Store
+Thumbs.db
+logs/
+*.log
+npm-debug.log*
+.vscode/
+.idea/

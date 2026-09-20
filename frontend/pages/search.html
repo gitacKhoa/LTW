@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tra cứu điểm — EduResult</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="app-sidebar"></div>
+
+  <div class="main">
+    <header class="topbar" id="app-topbar"></header>
+
+    <main class="content">
+      <div class="content__header">
+        <div>
+          <h1 class="content__title">Tra cứu kết quả</h1>
+          <p class="content__subtitle">Tìm kiếm theo Tên hoặc Mã số sinh viên.</p>
+        </div>
+      </div>
+
+      <section class="card">
+        <div class="topbar__search" style="max-width:420px;margin-bottom:16px;">
+          <span id="searchIconWrap2"></span>
+          <input type="search" id="mainSearch" placeholder="Nhập tên hoặc mã số sinh viên...">
+        </div>
+
+        <div class="tabs" id="typeTabs" style="margin-bottom:18px;">
+          <button class="tabs__btn is-active" data-type="all">Tất cả</button>
+          <button class="tabs__btn" data-type="name">Theo tên</button>
+          <button class="tabs__btn" data-type="mssv">Theo MSSV</button>
+          <button class="tabs__btn" data-type="class">Theo lớp</button>
+        </div>
+
+        <div id="resultCountLabel" class="text-sm text-muted mt-8" style="margin-bottom:10px;"></div>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>MSSV</th><th>Họ và tên</th><th>Lớp</th><th>Điểm TB</th><th>Xếp loại</th><th></th></tr></thead>
+            <tbody id="searchBody"></tbody>
+          </table>
+        </div>
+        <div class="pagination" id="searchPagination"></div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="../assets/js/core/icons.js"></script>
+<script src="../assets/js/core/mockData.js"></script>
+<script src="../assets/js/core/api.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/ui.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/pages/search.js"></script>
+</body>
+</html>

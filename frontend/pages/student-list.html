@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danh sách sinh viên — EduResult</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="app-sidebar"></div>
+
+  <div class="main">
+    <header class="topbar" id="app-topbar"></header>
+
+    <main class="content">
+      <div class="content__header">
+        <div>
+          <h1 class="content__title">Danh sách sinh viên</h1>
+          <p class="content__subtitle" id="totalCountLabel">Đang tải...</p>
+        </div>
+      </div>
+
+      <section class="card">
+        <div class="flex items-center gap-12 mt-8" style="flex-wrap:wrap;margin-bottom:16px;">
+          <div class="topbar__search" style="max-width:320px;">
+            <span id="searchIconWrap"></span>
+            <input type="search" id="listSearch" placeholder="Tìm theo tên hoặc MSSV...">
+          </div>
+          <select id="classFilter" style="padding:10px 14px;border-radius:var(--r-pill);border:1px solid var(--border);background:var(--surface-2);">
+            <option value="">Tất cả lớp</option>
+          </select>
+          <div class="tabs" id="statusTabs" style="margin-left:auto;">
+            <button class="tabs__btn is-active" data-status="">Tất cả</button>
+            <button class="tabs__btn" data-status="pass">Đậu</button>
+            <button class="tabs__btn" data-status="fail">Rớt</button>
+            <button class="tabs__btn" data-status="none">Chưa có KQ</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>MSSV</th><th>Họ và tên</th><th>Lớp</th><th>GPA</th><th>Xếp loại</th><th>Trạng thái</th><th></th></tr>
+            </thead>
+            <tbody id="studentListBody"></tbody>
+          </table>
+        </div>
+        <div class="pagination" id="listPagination"></div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="../assets/js/core/icons.js"></script>
+<script src="../assets/js/core/mockData.js"></script>
+<script src="../assets/js/core/api.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/ui.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/pages/studentList.js"></script>
+</body>
+</html>
