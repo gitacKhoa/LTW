@@ -101,10 +101,11 @@
     // AUTH  ->  /api/auth/*
     // =====================================================
     auth: {
-      async login({ email, password }) {
+      async login({ username, email, password }) {
+        const loginName = (username || email || '').trim();
         const payload = await requestJson('/auth/login', {
           method: 'POST',
-          body: JSON.stringify({ username: email, password }),
+          body: JSON.stringify({ username: loginName, password }),
         });
         return {
           token: payload.token,

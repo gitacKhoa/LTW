@@ -35,7 +35,7 @@
     const btn = document.getElementById('loginSubmit');
     btn.disabled = true; btn.textContent = 'Đang đăng nhập...';
 
-    EduResultAPI.auth.login({ email: username, password }).then((res) => {
+    EduResultAPI.auth.login({ username, password }).then((res) => {
       EduResultAuth.setSession({ token: res.token, role: res.role, viewRole: null, user: res.user });
       window.location.href = EduResultAuth.homeForRole(res.role);
     }).catch((err) => {
